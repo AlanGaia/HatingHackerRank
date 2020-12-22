@@ -5,11 +5,9 @@ function repeatedString(s, n) {
   let extraLetters = s.slice(0,restOfString);
   extraLetters = extraLetters.split('').sort().lastIndexOf('a')+1;
 
-  let result = Math.round((n / charsInString))* AsesInString + extraLetters;
+  let result = Math.floor((n / charsInString))* AsesInString + extraLetters;
 
   return result
-
-
 
 }
 
