@@ -1,20 +1,16 @@
 function repeatedString(s, n) {
-  const range = (start, stop, step) =>
-    Array.from(
-      { length: (stop - start) / step + 1 },
-      (_, i) => start + i * step
-    );
-  let positions = range(0, s.length - 1, 1);
+  let charsInString = s.length;
+  let AsesInString  = s.split('').sort().lastIndexOf('a')+1;
+  let restOfString = n % charsInString;
+  let extraLetters = s.slice(0,restOfString);
+  extraLetters = extraLetters.split('').sort().lastIndexOf('a')+1;
 
-  positions.forEach((position) => {
- 
-      if (s.length + 1 !== n) {
-        s = s + s[position];
-      }
-    
-  });
+  let result = Math.round((n / charsInString))* AsesInString + extraLetters;
 
-  console.log(s);
+  return result
+
+
+
 }
 
-repeatedString("ab", 10);
+console.log(repeatedString("aba", 10)); 
